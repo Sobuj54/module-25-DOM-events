@@ -34,7 +34,7 @@ const makeRed = document.getElementById('make-red');
        }
 );
 
-// option-4 finla [we will use this sometimes]
+// option-4 final [we will use this sometimes]
 document.getElementById('make-goldenrod').addEventListener('click',
 function (){
     document.body.style.backgroundColor = 'goldenrod';
