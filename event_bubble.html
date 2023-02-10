@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubble</title>
+</head>
+<body id="body">
+    <h1>Exploring event bubble</h1>
+    <section id="item-section">
+        <ul id="item-ul">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Unde, beatae!</li>
+            <li id="item-3">Provident, illum?</li>
+            <li id="item-4">Vero, iste!</li>
+            <li id="item-5">Maiores, veritatis.</li>
+            <li id="item-6">Quidem, fugit!</li>
+        </ul>
+    </section>
+
+    <script>
+        // to see the bubble we need to see in console
+        // item 2 clicked bubble
+        // document.getElementById('item-2').addEventListener('click',function(){
+        //     console.log('item 2 has bee clicked');
+        // })
+        // ---------->
+        // stopping bubble using event.stopPropagation()
+        document.getElementById('item-2').addEventListener('click',function(event){
+            console.log('item 2 has bee clicked');
+            event.stopPropagation();
+        })
+
+        // item ul clicked bubble
+        document.getElementById('item-ul').addEventListener('click',function(){
+            console.log('item ul has bee clicked');
+        })
+        // item section clicket bubble
+        document.getElementById('item-section').addEventListener('click',function(){
+            console.log('item section has bee clicked');
+        })
+        // body clicked bubble
+        document.getElementById('body').addEventListener('click',function(){
+            console.log('body has bee clicked');
+        })
+
+    </script>
+</body>
+</html>
