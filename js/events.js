@@ -1,6 +1,6 @@
 // option-1 is to directly set event handling inside html tag..we will not use option 1 that much.
 
-// option:2 of event handling
+// option:2 of event handling [we will use this sometimes]
 function makeGreen (){
     document.body.style.backgroundColor = 'green';
 }
@@ -18,3 +18,25 @@ const makePurple = document.getElementById('make-purple');
 makePurple.onclick = function purple (){
     document.body.style.backgroundColor = 'purple';
 }
+
+// option -4 using addEventListener
+const makePink = document.getElementById('make-pink');
+makePink.addEventListener('click',pink);
+
+function pink (){
+    document.body.style.backgroundColor = 'pink';
+}
+// option-4 another
+const makeRed = document.getElementById('make-red');
+       makeRed.addEventListener('click',
+       function red(){
+        document.body.style.backgroundColor = 'red';
+       }
+);
+
+// option-4 finla [we will use this sometimes]
+document.getElementById('make-goldenrod').addEventListener('click',
+function (){
+    document.body.style.backgroundColor = 'goldenrod';
+   }
+);
