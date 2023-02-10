@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js DOM summary</title>
+</head>
+<body>
+    <h1>Final DOM event handlers</h1>
+    <h3 id="handler-status">Default text</h3>
+
+    <p id="default-text">default input text</p>
+    <input id="input-type" type="text">
+    <button id="update">update</button>
+    <br>
+    <br>
+    <button onclick="handleOnClick()">Handle event by add on click function</button>
+    <!-- option 2 -->
+    <button id="event-listener">Handle event by addEventListener</button>
+
+    <script>
+        function handleOnClick(){
+            const handlerStatus = document.getElementById('handler-status');
+        handlerStatus.innerText = 'handled by function attached on click attribute ';
+        }
+        // option 2
+        document.getElementById('event-listener').addEventListener('click',function(){
+            const handlerStatus = document.getElementById('handler-status');
+        handlerStatus.innerText = 'handled by addEventListener';
+        })
+        // option 2 inside input field
+        document.getElementById('update').addEventListener('click',function(){
+            const inputType = document.getElementById('input-type');
+            // .value is used to get value from the input field
+            const inputTypeValue = inputType.value;
+            document.getElementById('default-text').innerText = inputTypeValue; 
+            // this will clear the input field when we press update button
+            inputType.value = '';
+        })
+    </script>
+</body>
+</html>
