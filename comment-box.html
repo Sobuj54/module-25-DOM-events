@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+<body>
+    <h1>please leave your comment</h1>
+    <div id="comment-blog">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, rerum dolores. Magni, tempore quis? Ipsam odio blanditiis consectetur vero aut? Vel aliquid sit voluptas iure accusantium. Expedita impedit aliquam ab ullam illo quia, architecto accusamus? Quibusdam voluptates fugit repellendus temporibus culpa nesciunt libero corporis optio cupiditate hic, veritatis, distinctio minus.</p>
+        <p>Pariatur expedita vero aspernatur reprehenderit cumque quidem et optio accusantium nobis iste unde excepturi sint molestiae, nisi tempora a vitae? Unde nostrum aperiam sed numquam voluptatibus reiciendis minima iure tempore. Obcaecati harum ratione nam cumque recusandae ex, quas dolores id a, illo non? Reiciendis repellendus vitae, dicta placeat omnis aliquid.</p>
+        <p>Asperiores quas illo magnam quod sequi autem, corporis veritatis veniam architecto eos! Expedita explicabo quibusdam rem dolorem itaque vitae ab magni et illum odio tempora atque, ipsum delectus nisi culpa blanditiis reprehenderit, asperiores in corrupti. Explicabo, commodi sunt dolore officia quam iure quisquam, odit, dolor cumque expedita magnam impedit quasi?</p>
+    </div>
+    <div>
+        <textarea name="" id="text-area" cols="60" rows="5"></textarea>
+        <br>
+        <button id="btn-post">post</button>
+    </div>
+
+    <script>
+        document.getElementById('btn-post').addEventListener('click',function(){
+            const comment = document.getElementById('text-area');
+            const newComment = comment.value;
+            //1. where to add 
+            const container = document.getElementById('comment-blog');
+            // 2.what to add
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            // finally append
+            container.append(p);
+            // clear the text area
+            comment.value = '';
+        })
+    </script>
+</body>
+</html>
